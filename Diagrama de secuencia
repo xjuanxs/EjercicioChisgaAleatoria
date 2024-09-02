@@ -1,0 +1,16 @@
+actor Usuario
+
+Usuario -> Chisga: Chisga()
+
+Usuario -> Chisga: simular_chisga()
+
+Chisga -> GeneradorAleatorio: randomizar_numero(10)
+GeneradorAleatorio -> Chisga: número de músicos
+
+loop para cada musico (hasta el número aleatorio generado)
+  Chisga -> GeneradorAleatorio: randomizar(instrumentos)
+  GeneradorAleatorio -> Chisga: Instrumento
+  Chisga -> Musico: asignar_instrumento(Instrumento)
+end loop
+
+Chisga -> Usuario: mostrar resultados
