@@ -1,0 +1,27 @@
+class Musico {
+  - nombre: str
+  + Musico(nombre: str)
+}
+
+class Instrumento {
+  - tipo: str
+  + Instrumento(tipo: str)
+}
+
+class Chisga {
+  - musicos: list<Musico>
+  - instrumentos: list<Instrumento>
+  + Chisga()
+  + agregar_musico(musico: Musico) : void
+  + asignar_instrumento(musico: Musico) : Instrumento
+  + simular_chisga() : void
+}
+
+class GeneradorAleatorio {
+  + randomizar(lista: list) : any
+  + randomizar_numero(max_num: int) : int
+}
+
+Chisga *--  Musico 
+Chisga *--  Instrumento 
+Chisga ..> GeneradorAleatorio
